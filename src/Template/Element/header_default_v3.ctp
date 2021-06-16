@@ -64,6 +64,9 @@
                         <li class="nav-item g-ml-20 <?= $control == 'trick' ? 'active' : '' ?>">
                             <?= $this->Html->link('เคล็ดลับ', ['controller' => 'trick'], ['class' => 'nav-link g-color-primary g-color-black--hover']) ?>
                         </li>
+                        <li class="nav-item g-ml-20 <?= $control == 'vdo' ? 'active' : '' ?>">
+                            <?= $this->Html->link('วิดีโอ', ['controller' => 'vdo'], ['class' => 'nav-link g-color-primary g-color-black--hover']) ?>
+                        </li>
                         <li class="nav-item g-ml-20 <?= $control == 'contact' ? 'active' : '' ?>">
                             <?= $this->Html->link('ติดต่อเรา', ['controller' => 'contact'], ['class' => 'nav-link g-color-primary g-color-black--hover']) ?>
                         </li>

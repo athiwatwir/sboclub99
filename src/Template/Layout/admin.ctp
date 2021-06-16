@@ -210,7 +210,11 @@
                             <?php $link = '<span class="d-flex align-self-center g-font-size-18 g-mr-18"><i class="hs-admin-medall"></i></span><span class="media-body align-self-center">เคล็ดลับ</span>'; ?>
                             <?= $this->Html->link($link, ['controller' => 'articles', 'action' => 'index', 'trick'], ['class' => 'media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12', 'escape' => false]) ?>
                         </li>
-
+                        
+                        <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+                            <?php $link = '<span class="d-flex align-self-center g-font-size-18 g-mr-18"><i class="hs-admin-medall"></i></span><span class="media-body align-self-center">วิดีโอ</span>'; ?>
+                            <?= $this->Html->link($link, ['controller' => 'admin-vdo', 'action' => 'index'], ['class' => 'media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12', 'escape' => false]) ?>
+                        </li>
 
                     </ul>
                 </div>
