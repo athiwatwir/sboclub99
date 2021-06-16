@@ -18,6 +18,24 @@ class LoginController extends AppController {
         parent::beforeFilter($event);
         $this->viewBuilder()->layout('admin_login');
         $this->Users = TableRegistry::get('Users');
+
+        $this->loadComponent('Auth', [
+            'loginAction' => [
+                'controller' => 'login',
+                'action' => 'index'
+            ],
+            'loginRedirect' => ['controller' => 'admin-home', 'action' => 'index'],
+            'logoutRedirect' => [
+                'controller' => 'login',
+                'action' => 'index'
+            ],
+            'authenticate' => [
+                'Form' => [
+                    'fields' => ['username' => 'username', 'password' => 'password']
+                ]
+            ],
+            'storage' => 'Session'
+        ]);
     }
 
     public function index() {

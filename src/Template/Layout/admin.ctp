@@ -114,6 +114,11 @@
     </head>
 
     <body>
+        <?php
+            if($this->Session->read('Auth.User') == '') {
+                header("Refresh:0; url=".SITE_URL.'/login');
+            }
+        ?>
         <!-- Header -->
         <header id="js-header" class="u-header u-header--sticky-top">
             <div class="u-header__section u-header__section--admin-dark g-min-height-65">

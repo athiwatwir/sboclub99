@@ -52,24 +52,6 @@ class UsersTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->scalar('usercode')
-            ->allowEmpty('usercode');
-
-        $validator
-            ->scalar('title')
-            ->allowEmpty('title');
-
-        $validator
-            ->scalar('firstname')
-            ->requirePresence('firstname', 'create')
-            ->notEmpty('firstname');
-
-        $validator
-            ->scalar('lastname')
-            ->requirePresence('lastname', 'create')
-            ->notEmpty('lastname');
-
-        $validator
             ->scalar('username')
             ->allowEmpty('username');
 
@@ -77,53 +59,6 @@ class UsersTable extends Table
             ->scalar('password')
             ->allowEmpty('password');
 
-        $validator
-            ->email('email')
-            ->allowEmpty('email');
-
-        $validator
-            ->scalar('phone')
-            ->allowEmpty('phone');
-
-        $validator
-            ->scalar('lineid')
-            ->allowEmpty('lineid');
-
-        $validator
-            ->scalar('fax')
-            ->allowEmpty('fax');
-
-        $validator
-            ->scalar('isactive')
-            ->allowEmpty('isactive');
-
-        $validator
-            ->scalar('isverify')
-            ->allowEmpty('isverify');
-
-        $validator
-            ->scalar('islocked')
-            ->allowEmpty('islocked');
-
-        $validator
-            ->scalar('iscustomer')
-            ->allowEmpty('iscustomer');
-
-        $validator
-            ->scalar('isseller')
-            ->allowEmpty('isseller');
-
-        $validator
-            ->scalar('gender')
-            ->allowEmpty('gender');
-
-        $validator
-            ->scalar('verifycode')
-            ->allowEmpty('verifycode');
-
-        $validator
-            ->scalar('position')
-            ->allowEmpty('position');
 
         return $validator;
     }
@@ -138,7 +73,6 @@ class UsersTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['username']));
-        $rules->add($rules->isUnique(['email']));
 
         return $rules;
     }
