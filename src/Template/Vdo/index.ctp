@@ -15,7 +15,7 @@
 	<?php foreach ($vdos as $key => $item): ?>
 		<div class="col-md-4 col-12 px-2 mb-4 text-center">
 			<div class="embed-responsive embed-responsive-21by9" style="height: 200px; cursor: pointer;">
-                <a href="<?=SITE_URL.$item->path?>" target="_blank">
+                <a href="<?=SITE_URL.'vdo/view/'.$item->id?>" target="_blank">
                     <video class="img-responsive cls_vdo" id="is_vdo_<?= $key ?>" preload="metadata">
                         <source src="<?=SITE_URL.$item->path?>#t=0.1" type="video/mp4">
                         
@@ -23,7 +23,10 @@
                     </video>
                 </a>
         	</div>
-            <small><?= $item->name ?></small>
+            <a href="<?=SITE_URL.'vdo/view/'.$item->id?>" target="_blank">
+                <?= $item->name ?>
+            </a>
+            
 		</div>
 
 	<?php endforeach; ?>

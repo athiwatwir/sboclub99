@@ -9,8 +9,8 @@
         <div class="hpanel">
 
             <div class="panel-body">
-                <?= $this->Form->create($adminVdo, ['enctype' => 'multipart/form-data']) ?>
-                <?= $this->Form->hidden('article_type_id', ['id' => 'type']) ?>
+                <form name="frm" id="frm" method="post" enctype="multipart/form-data">
+           
                 <div class="form-group">
                     <h4 class="h6 g-font-weight-600 g-color-black g-mb-20">VDO</h4>
 
@@ -19,7 +19,7 @@
 
                         <div class="input-group-btn">
                             <button class="btn btn-md h-100 u-btn-primary rounded-0" type="submit">Browse</button>
-                            <input type="file" name="upload_file" id="upload_file" accept="video/mp4,video/x-m4v" >
+                            <input type="file" name="upload_file" id="upload_file" accept="video/mp4,video/x-m4v" />
                         </div>
                     </div>
                 </div>
@@ -30,9 +30,9 @@
                 
                 <div class="form-group">
 
-                    <?= $this->Form->button('บันทึก', ['class' => 'btn btn-primary', 'id' => 'ck']) ?>
+                    <?= $this->Form->button('บันทึก', ['class' => 'btn btn-primary', 'id' => 'ck','type'=>'submit']) ?>
                 </div>
-                <?= $this->Form->end() ?>
+                </form>
             </div>
         </div>
     </div>
@@ -52,7 +52,7 @@
                 name: {
                     required: true
                 },
-                url: {
+                upload_file: {
                     required: true
                 }
             },

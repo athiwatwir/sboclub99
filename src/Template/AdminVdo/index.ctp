@@ -28,7 +28,7 @@
                                     onClick="setVideoModal('<?=SITE_URL.$item->path?>', '<?=$item->name?>')" 
                                     style="height: 50px; width: 120px; cursor: pointer;">
                                     <video class="img-responsive cls_vdo" id="is_vdo_<?= $key ?>" preload="metadata">
-                                        <source src="<?=SITE_URL.$item->path?>.#t=0.5" type="video/mp4">
+                                        <source src="<?=SITE_URL.$item->path?>#t=0.5" type="video/mp4">
                                     </video>
                                 </div>
                                 <?=$item->name?>

@@ -26,7 +26,9 @@ class AdminVdoController extends AppController
      */
     public function index()
     {        
-        $adminVdo = $this->Vdos->find()->toArray();
+        $adminVdo = $this->Vdos->find()
+            ->order(['created'=>'DESC'])
+            ->toArray();
 
         $this->set(compact('adminVdo'));
     }
@@ -55,14 +57,18 @@ class AdminVdoController extends AppController
     public function add()
     {
         $adminVdo = $this->Vdos->newEntity();
+   
         if ($this->request->is('post')) {
-            $adminVdo = $this->Vdos->patchEntity($adminVdo, $this->request->getData());
+            
+            $adminVdo = $this->Vdos->patchEntity($adminVdo, $this->request->data());
+            debug($this->request->data);
 
             $this->loadComponent('UploadVideo');
-            $file = $this->request->data['upload_file'];
+            $file = $this->request->data('upload_file');
 
             if (!is_null($file['tmp_name']) && $file['tmp_name'] != '') {
                 $pathArr = $this->UploadVideo->upload($file);
+                $adminVdo->name = $this->request->data('name');
                 $adminVdo->path = $pathArr['path'];
                 $adminVdo->fullpath = $pathArr['fullpath'];
             }

@@ -33,5 +33,12 @@ class VdoController extends AppController
         $this->set(compact('vdos'));
     }
 
+    public function view($id){
+        $vdo = $this->Vdos->find()
+                ->where(['id'=>$id])
+                ->first();
+        $this->set(compact('vdo'));
+    }
+
     
 }
